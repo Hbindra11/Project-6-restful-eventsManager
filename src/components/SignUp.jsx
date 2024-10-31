@@ -17,19 +17,19 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
-    console.log("Form Data Submitted:", formData);
-
+    console.log("Form Data Submitted:", formData); // Log form data
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/register", formData);
-      if (response.status === 201) {
-        navigate('/signIn');
+      const response = await axios.post("http://localhost:3001/api/users", formData);
+      console.log("Server Response:", response);
+      if (response.status === 200) {
+          console.log("User successfully registered:", response.data);
+          navigate('/signIn');
       }
-    } catch (error) {
-      console.error('Registration failed:', error.response.data);
+  } catch (error) {
+      console.error('Registration failed:',  error.response.data );
       alert('Registration failed');
-    }
-  };
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-6 bg-gray-100 rounded-md max-w-md mx-auto">
@@ -63,6 +63,14 @@ const SignUp = () => {
     <button type="submit" className="bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600 transition duration-300">
       Sign Up
     </button>
+
+  <p className="mt-4 text-center">
+  Already have an account? 
+  <button onClick={() => navigate('/signIn')} className="text-purple-500 hover:underline">
+    Sign In
+  </button>
+</p>
+
   </form>
 );
 };

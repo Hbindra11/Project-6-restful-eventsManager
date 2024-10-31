@@ -13,8 +13,9 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001//api/auth/login", formData);
+      const response = await axios.post("http://localhost:3001/api/auth/login", formData);
       localStorage.setItem('token', response.data.token);
+      console.log('Login successful. Token received:', response.data.token);
       navigate('/');
     } catch (error) {
       console.error('Login failed:', error.response.data);
@@ -51,6 +52,13 @@ const SignIn = () => {
       <button type="submit" className="bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600 transition duration-300">
        Sign In
       </button>
+
+      <p className="mt-4 text-center">
+        Don't have an account? 
+      <button onClick={() => navigate('/signIn')} className="text-purple-500 hover:underline">
+         Sign Up
+      </button>
+    </p>
     </form>
   );
 };
