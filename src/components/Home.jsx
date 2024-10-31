@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+
 // This component represent an individual page
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -27,7 +28,7 @@ const Home = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center"></div>
 
-        <div className="flex flex-wrap ">
+        <div className="flex flex-wrap m-10 p-10">
           {events.map((anEvent) => {
             return (
               <div key={anEvent.id} className=" " >
@@ -38,14 +39,16 @@ const Home = () => {
                   </div>
 
                   <div className="card-actions justify-end underline">
-                    <NavLink to={`event/${anEvent.id}`}>Details</NavLink>
+                    <NavLink to={`/events/${anEvent.id}`}>Details</NavLink>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+       
       </div>
+     
     </>
   );
 };
