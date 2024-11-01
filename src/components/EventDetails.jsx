@@ -21,9 +21,10 @@ const EventDetails = () => {
 
   return (
     <>
+   
       {event && (
-        <div className="flex justify-center">
-          <div className="card bg-base-100 image-full p-10 m-10 w-2/6 shadow-xl">
+        <div className="hero bg-base-200 min-h-screen flex justify-center ">
+          <div className="card bg-base-100 image-full m-10 w-1/3 shadow-xl">
             <figure>
               <img src="\src\assets\lamps-4333322_1280.jpg" alt="Lights" />
             </figure>
@@ -44,6 +45,7 @@ const EventDetails = () => {
           </div>
         </div>
       )}
+     
     </>
   );
 };
