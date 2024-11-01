@@ -49,13 +49,13 @@ const SignIn = () => {
         />
       </label>
 
-      <button type="submit" className="bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600 transition duration-300">
+      <button type="submit" className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">
        Sign In
       </button>
 
       <p className="mt-4 text-center">
         Don't have an account? 
-      <button onClick={() => navigate('/signIn')} className="text-purple-500 hover:underline">
+      <button onClick={() => navigate('/signIn')} className="text-orange-500 hover:underline">
          Sign Up
       </button>
     </p>
