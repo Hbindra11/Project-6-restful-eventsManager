@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -13,6 +12,7 @@ import Home from './components/Home';
 import SignIn  from './components/SignIn';
 import SignUp from './components/SignUp';
 import CreateEvent from './components/CreateEvent';
+import EventDetails from './components/EventDetails';
 
 const App = () => {
   
@@ -23,14 +23,14 @@ const App = () => {
         <Route path="signIn" element={<SignIn />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="createEvent" element={<CreateEvent />} />
+        <Route path="/events/:id" element={<EventDetails />} />
       </Route>,
     ),
   );
    
   return (
     <>
-    <RouterProvider router={router} />
-         
+    <RouterProvider router={router} />         
     </>
   )
 }
