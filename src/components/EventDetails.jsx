@@ -21,7 +21,6 @@ const EventDetails = () => {
 
   return (
     <>
-   
       {event && (
         <div className="hero bg-base-200 min-h-screen flex justify-center ">
           <div className="card bg-base-100 image-full m-10 w-1/3 shadow-xl">
@@ -29,7 +28,6 @@ const EventDetails = () => {
               <img src="\src\assets\lamps-4333322_1280.jpg" alt="Lights" />
             </figure>
             <div className="card-body">
-              {/* <h2 >New album is released!</h2> */}
               <h2 className="card-title"> {event.title}</h2>
               <p>{event.description}</p>
               <p>Location: {event.location}</p>
@@ -45,7 +43,6 @@ const EventDetails = () => {
           </div>
         </div>
       )}
-     
     </>
   );
 };

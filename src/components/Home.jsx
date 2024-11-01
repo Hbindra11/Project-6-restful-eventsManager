@@ -21,8 +21,7 @@ const Home = () => {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+          backgroundImage: "url(./src/assets/pedestrians-400811_1280.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
@@ -31,7 +30,7 @@ const Home = () => {
         <div className="flex flex-wrap m-10 p-10">
           {events.map((anEvent) => {
             return (
-              <div key={anEvent.id} className=" " >
+              <div key={anEvent.id} className=" ">
                 <div className="card bg-cyan-100 px-8 py-3 m-5 w-96">
                   <h2 className="card-title">{anEvent.title}</h2>
                   <div className="card-body">
@@ -46,9 +45,7 @@ const Home = () => {
             );
           })}
         </div>
-       
       </div>
-     
     </>
   );
 };
