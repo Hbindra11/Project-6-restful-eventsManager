@@ -6,8 +6,8 @@ const isAuthenticated = localStorage.getItem("token") || null;
 const CreateEvent = () => {
   console.log("value of token is: " + localStorage.getItem("token") || null);
 
-  const handelSubmit = (e) => { e.preventDefault();
-    ;
+  const handelSubmit = (e) => {
+    e.preventDefault();
   };
   return (
     <>
@@ -17,7 +17,7 @@ const CreateEvent = () => {
             <label className="font-medium">
               Title:
               <input
-                className="input input-bordered w-full max-w-md shadow-lg"
+                className="input input-bordered   border-gray-400 w-full max-w-md shadow-lg"
                 type="text"
                 placeholder="Type here"
               />
@@ -25,21 +25,21 @@ const CreateEvent = () => {
             <label className="font-medium">
               Description:
               <textarea
-                className="textarea textarea-bordered textarea-lg w-full max-w-md shadow-lg"
+                className="textarea textarea-bordered  border-gray-400 textarea-lg w-full max-w-md shadow-lg"
                 placeholder="Type here"
               ></textarea>
             </label>
             <label className="font-medium">
               Date:
               <input
-                className="input input-bordered w-full max-w-md shadow-lg"
+                className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
                 type="datetime-local"
               />
             </label>
             <label className="font-medium">
               Location:
               <input
-                className="input input-bordered w-full max-w-md shadow-lg"
+                className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
                 type="text"
                 placeholder="Type here"
               />
@@ -47,7 +47,7 @@ const CreateEvent = () => {
             <button
               onSubmit={handelSubmit}
               type="submit"
-              className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 shadow-lg"
+              className="btn btn-active bg-orange-500 text-white hover:bg-orange-600 font-bold"
             >
               Save Event
             </button>

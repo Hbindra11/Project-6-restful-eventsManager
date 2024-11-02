@@ -40,7 +40,7 @@ const SignIn = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="p-2 mt-1 border border-gray-400 rounded shadow-lg"
+            className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
             placeholder="Type here"
           />
         </label>
@@ -53,14 +53,14 @@ const SignIn = () => {
             value={formData.password}
             onChange={handleChange}
             required
-            className="p-2 mt-1 border border-gray-400 rounded shadow-lg "
+            className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
             placeholder="Type here"
           />
         </label>
 
         <button
           type="submit"
-          className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 shadow-lg"
+          className="btn btn-active bg-orange-500 text-white hover:bg-orange-600 font-bold"
         >
           Sign In
         </button>
