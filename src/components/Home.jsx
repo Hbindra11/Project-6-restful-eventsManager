@@ -27,12 +27,12 @@ const Home = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center"></div>
 
-        <div className="flex flex-wrap m-10 p-10">
+        <div className="flex flex-wrap m- p-10">
           {events.map((anEvent) => {
             return (
-              <div key={anEvent.id} className=" ">
-                <div className="card bg-cyan-100 px-8 py-3 m-5 w-96">
-                  <h2 className="card-title">{anEvent.title}</h2>
+              <div key={anEvent.id}>
+                <div className="card bg-orange-50 px-8 py-3 m-5 w-96">
+                  <h2 className="card-title ">{anEvent.title}</h2>
                   <div className="card-body">
                     <p>{anEvent.description}</p>
                   </div>

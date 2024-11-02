@@ -17,7 +17,7 @@ const EventDetails = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <>
