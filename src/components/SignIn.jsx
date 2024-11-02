@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -13,53 +13,67 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/login", formData);
-      localStorage.setItem('token', response.data.token);
-      console.log('Login successful. Token received:', response.data.token);
-      navigate('/');
+      const response = await axios.post(
+        "http://localhost:3001/api/auth/login",
+        formData
+      );
+      localStorage.setItem("token", response.data.token);
+      console.log("Login successful. Token received:", response.data.token);
+      navigate("/");
     } catch (error) {
-      console.error('Login failed:', error.response.data);
-      alert('Login failed');
+      console.error("Login failed:", error.response.data);
+      alert("Login failed");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-6 bg-gray-100 rounded-md max-w-md mx-auto">
-      <label className="flex flex-col text-left font-medium">
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="p-2 mt-1 border border-gray-300 rounded"
-        />
-      </label>
+    <div className="bg-gray-50">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 p-6 bg-gray-50 rounded-md max-w-md mx-auto"
+      >
+        <label className="flex flex-col text-left font-medium">
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="p-2 mt-1 border border-gray-400 rounded shadow-lg"
+          />
+        </label>
 
-      <label className="flex flex-col text-left font-medium">
-        Password:
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          className="p-2 mt-1 border border-gray-300 rounded"
-        />
-      </label>
+        <label className="flex flex-col text-left font-medium">
+          Password:
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            className="p-2 mt-1 border border-gray-400 rounded shadow-lg "
+          />
+        </label>
 
-      <button type="submit" className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300">
-       Sign In
-      </button>
+        <button
+          type="submit"
+          className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 shadow-lg"
+        >
+          Sign In
+        </button>
 
-      <p className="mt-4 text-center">
-        Don't have an account? 
-      <button onClick={() => navigate('/signIn')} className="text-orange-500 hover:underline">
-         Sign Up
-      </button>
-    </p>
-    </form>
+        <p className="mt-4 text-center mb-72">
+          Don't have an account?
+          <button
+            onClick={() => navigate("/signIn")}
+            className="text-orange-500 hover:underline"
+          >
+            Sign Up
+          </button>
+        </p>
+      </form>
+    </div>
   );
 };
 
