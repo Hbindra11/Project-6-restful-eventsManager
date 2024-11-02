@@ -27,7 +27,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 p-36">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 p-6 bg-gray-50 rounded-md max-w-md mx-auto"
@@ -41,6 +41,7 @@ const SignIn = () => {
             onChange={handleChange}
             required
             className="p-2 mt-1 border border-gray-400 rounded shadow-lg"
+            placeholder="Type here"
           />
         </label>
 
@@ -53,6 +54,7 @@ const SignIn = () => {
             onChange={handleChange}
             required
             className="p-2 mt-1 border border-gray-400 rounded shadow-lg "
+            placeholder="Type here"
           />
         </label>
 
@@ -63,7 +65,7 @@ const SignIn = () => {
           Sign In
         </button>
 
-        <p className="mt-4 text-center mb-72">
+        <p className="mt-4 text-center ">
           Don't have an account?
           <button
             onClick={() => navigate("/signIn")}
