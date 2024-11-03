@@ -4,33 +4,25 @@ import axios from "axios";
 
 const CreateEvent = () => {
   const isAuthenticated = localStorage.getItem("token") || null;
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    date: "",
-    location: "",
-    latitude: 8.404746955649602,
-    longitude: 49.01438194665317,
-  });
-  //console.log("value of token is: " + localStorage.getItem("token") || null);
+  const [formData, setFormData] = useState({title:""});
 
   const handelChange = (e) => {
-    setFormData(({ ...formData, [e.target.name]: e.target.value }));
-    //console.log(e.target.name);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handelSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     axios
-      .post('http://localhost:3001/api/events',formData)
+      .post("http://localhost:3001/api/events", formData)
       .then((res) => {
-        console.log("response data: "+res.data);
+        console.log("response data: " + res.data);
+        alert("The event was saved successfully!");
       })
       .catch((err) => {
         console.log(err);
+        alert("Failed to save the event! " + err.message);
       });
-      
   };
   return (
     <>
