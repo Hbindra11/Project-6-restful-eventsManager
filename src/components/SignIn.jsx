@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -66,7 +66,7 @@ const SignIn = () => {
         </button>
 
         <p className="mt-4 text-center ">
-          Don't have an account?
+          Don&apos;t have an account?
           <button
             onClick={() => navigate("/signIn")}
             className="text-orange-500 hover:underline"
