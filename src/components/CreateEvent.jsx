@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const CreateEvent = () => {
   const isAuthenticated = localStorage.getItem("token") || null;
@@ -8,19 +9,28 @@ const CreateEvent = () => {
     description: "",
     date: "",
     location: "",
-    latitude: "8.404746955649602",
-    longitude: "49.01438194665317",
+    latitude: 8.404746955649602,
+    longitude: 49.01438194665317,
   });
   //console.log("value of token is: " + localStorage.getItem("token") || null);
 
   const handelChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData(({ ...formData, [e.target.name]: e.target.value }));
     //console.log(e.target.name);
   };
 
   const handelSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    axios
+      .post('http://localhost:3001/api/events',formData)
+      .then((res) => {
+        console.log("response data: "+res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      
   };
   return (
     <>
