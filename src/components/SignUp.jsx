@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -34,7 +34,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 p-36">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 p-6 bg-gray-50 rounded-md max-w-md mx-auto"
@@ -47,7 +47,8 @@ const SignUp = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="p-2 mt-1 border border-gray-400 rounded shadow-lg"
+            className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
+            placeholder="Type here"
           />
         </label>
 
@@ -59,18 +60,19 @@ const SignUp = () => {
             value={formData.password}
             onChange={handleChange}
             required
-            className="p-2 mt-1 border border-gray-400 rounded shadow-lg"
+           className="input input-bordered  border-gray-400 w-full max-w-md shadow-lg"
+            placeholder="Type here"
           />
         </label>
 
         <button
           type="submit"
-          className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-300 shadow-lg"
+          className="btn btn-active bg-orange-500 text-white hover:bg-orange-600 font-bold "
         >
           Sign Up
         </button>
 
-        <p className="mt-4 text-center mb-72">
+        <p className="mt-4 text-center ">
           Already have an account?
           <button
             onClick={() => navigate("/signIn")}
