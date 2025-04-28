@@ -38,13 +38,11 @@ This application ensures a seamless user experience by integrating modern web te
 
 ## Technologies Used
 - React
-- Redux
 - Axios
 - React Router
 - Tailwind CSS
 - Node.js
 - Express
-- MongoDB
 - Swagger UI
 
 
